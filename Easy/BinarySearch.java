@@ -1,0 +1,23 @@
+//https://leetcode.com/problems/binary-search/
+class Solution {
+    public int search(int[] nums, int target) {
+        if(nums.length==0){
+                return -1;
+            }
+        int s=0,e=nums.length-1;
+        while(s<=e){
+            int m=s+(e-s)/2;
+            
+            if(nums[m]==target){
+                return m;
+            }
+            if(target>nums[m]){
+                s=m+1;
+            }
+            else{
+                e=m-1;
+            }
+        }
+        return -1;
+    }
+}
